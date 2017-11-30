@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html >
+<head>
+</head>
+<body>
+<link rel="stylesheet" href="stylebuttons.css">
+<input type="button" id="b1" value="Engagement" class="button"/>
+<input type="button" id="b2" value="Excitement" class="button"/>
+<input type="button" id="b3" value="Focus" class="button"/>
+<input type="button" id="b4" value="Interest" class="button"/>
+<input type="button" id="b5" value="Relaxation" class="button"/>
+<input type="button" id="b6" value="Stress" class="button"/>
+<input type="button" id="b7" value="All" class="button"/>
+
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
+
+<script src="firebase.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+<link rel="stylesheet" href="canvases.css">
+<div id="wrapper1">
+  <canvas id="canvas2"></canvas>
+  <canvas id="canvas1"></canvas>
+  <script src='engLine.js'></script>
+</div>
+<div id="wrapper2">
+  <canvas id="canvas4"></canvas>
+  <canvas id="canvas3"></canvas>
+  <script src='excitLine.js'></script>
+</div>
+<div id="wrapper3">
+ <canvas id="canvas6"></canvas>
+ <canvas id="canvas5"></canvas>
+ <script src='focusLine.js'></script>
+</div>
+<div id="wrapper4">
+  <canvas id="canvas8"></canvas>
+  <canvas id="canvas7"></canvas>
+ <script src='interLine.js'></script>
+</div>
+<div id="wrapper5">
+  <canvas id="canvas10"></canvas>
+  <canvas id="canvas9"></canvas>
+ <script src='relaxLine.js'></script>
+</div>
+<div id="wrapper6">
+  <canvas id="canvas12"></canvas>
+  <canvas id="canvas11"></canvas>
+ <script src='stressLine.js'></script>
+</div>
+<div id="wrapper7">
+<canvas id="canvas14"></canvas>
+<canvas id="canvas13"></canvas>
+<script src='allEmotions.js'></script>
+</div>
+<script src="show.js"></script>
+</body>
+</html>
