@@ -1,7 +1,17 @@
+.nav{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: 10px;
+      margin-left: -150px;
+
+}
 a {
     text-decoration: none;
     display: inline-block;
-    padding: 8px 16px;
+    padding: 8px 50px;
+    margin: 0 auto;
+
 }
 
 a:hover {

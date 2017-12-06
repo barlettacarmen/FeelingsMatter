@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html >
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Unity WebGL Player | Raw360YoutubePlayer</title>
 </head>
 <body>
-<link rel="stylesheet" href="stylebuttons.css">
-<input type="button" id="b1" value="Engagement" class="button"/>
-<input type="button" id="b2" value="Excitement" class="button"/>
-<input type="button" id="b3" value="Focus" class="button"/>
-<input type="button" id="b4" value="Interest" class="button"/>
-<input type="button" id="b5" value="Relaxation" class="button"/>
-<input type="button" id="b6" value="Stress" class="button"/>
-<input type="button" id="b7" value="All" class="button"/>
-
+  <link rel="stylesheet" href="menustyle.css">
+  <div class="dropdown">
+  <button class="dropbtn"></button>
+  <div class="dropdown-content">
+    <a href="choosevideo.html">Change video</a>
+    <a href="slider.html">Change threasholds</a>
+    <a href="report.html">End experience</a>
+  </div>
+</div>
+  <link rel="stylesheet" href="stylebuttons.css">
+  <div style="position: absolute; bottom:0; width: 100%;">
+  <input type="button" id="b1" value="Engagement" class="button"/>
+  <input type="button" id="b2" value="Excitement" class="button"/>
+  <input type="button" id="b3" value="Focus" class="button"/>
+  <input type="button" id="b4" value="Interest" class="button"/>
+  <input type="button" id="b5" value="Relaxation" class="button"/>
+  <input type="button" id="b6" value="Stress" class="button"/>
+  <input type="button" id="b7" value="All" class="button"/>
+</div>
 <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
@@ -20,8 +33,40 @@
 <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
 
 <script src="firebase.js"></script>
+<!--WebGl-->
+<link rel="shortcut icon" href="TemplateData/favicon.ico">
+<link rel="stylesheet" href="TemplateData/style.css">
+<script src="TemplateData/UnityProgress.js"></script>
+<script src="Build/UnityLoader.js"></script>
+<script>
+  var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGL.json", {onProgress: UnityProgress});
+</script>
+<div class="webgl-content">
+  <div id="gameContainer" style="width: 960px; height: 560px;"></div>
+  <div class="footer">
+    <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+    <div class="play" onclick="Play()" id="playButton"></div>
+  </div>
+</div>
+<script>
+var playBtn= document.getElementById('playButton');
+function Play(){
+  database.ref('Play').once('value').then(function(snapshot){
+    if(snapshot.val()=='false'){
+      database.ref('Play').set('true');
+      playBtn.style.background="url('TemplateData/play.png') no-repeat";}
+    else{
+        database.ref('Play').set('false');
+        playBtn.style.background="url('TemplateData/pause.png') no-repeat";}
+  });
+}
+
+</script>
+<!--WebGl-->
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
 <link rel="stylesheet" href="canvases.css">
+<div id="wrapper0">
 <div id="wrapper1">
   <canvas id="canvas2"></canvas>
   <canvas id="canvas1"></canvas>
@@ -56,7 +101,8 @@
 <canvas id="canvas14"></canvas>
 <canvas id="canvas13"></canvas>
 <script src='allEmotions.js'></script>
-</div>
 <script src="show.js"></script>
+</div>
+</div>
 </body>
 </html>

@@ -1,7 +1,6 @@
 .sensors{
-  background-image: url("sensors.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+
+  padding-left:50%;
   height: 600px ; width: 462px;
 
 

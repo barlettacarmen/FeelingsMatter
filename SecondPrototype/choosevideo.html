@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="shortcut icon" href="TemplateDataSearch/favicon.ico">
+    <link rel="stylesheet" href="TemplateDataSearch/style.css">
+    <script src="TemplateDataSearch/UnityProgress.js"></script>
+    <script src="BuildSearch/UnityLoader.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+	<script>
+	 // Initialize Firebase
+		var config = {
+		apiKey: "AIzaSyA6p4PeUCemy40bVDlXNHTWoCePh3ZCCTs",
+		authDomain: "emotiv-4ed78.firebaseapp.com",
+		databaseURL: "https://emotiv-4ed78.firebaseio.com",
+		projectId: "emotiv-4ed78",
+		storageBucket: "emotiv-4ed78.appspot.com",
+		messagingSenderId: "511920732832"
+		};
+		firebase.initializeApp(config);
+		var database = firebase.database();
+
+		function LoadInFirebase(str){
+			var IDref = database.ref('videoID').set({
+			ID: str});
+			database.ref('Play').set("false");
+		};
+	</script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "BuildSearch/WebGLSearch.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <div style="position: relative; padding-right: 40px;padding-left: 300px;font-family: Arial">
+    <h3>Choose your YouTube video</h3>
+  </div>
+  <body>
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <a href="canvases.html" class="yes" id="thr" onclick="saveVideo()"style="background-color: #4CAF50;color: white;">Ok &raquo;</a>
+      </div>
+      <script>
+      var vobj={videos:[]};
+      function saveVideo(){
+        if(localStorage.getItem('video')!=null){
+          let v=JSON.parse(localStorage.getItem('video'));
+          vobj.videos=vobj.videos.concat(v.videos);}
+        database.ref('videoID/ID').once('value').then(function(snapshot){
+        vobj.videos.push(snapshot.val());
+      });
+      localStorage.setItem('video', JSON.stringify(vobj));
+        window.alert(localStorage.getItem('video'));
+      }
+      </script>
+
+    </div>
+  </body>
+</html>
