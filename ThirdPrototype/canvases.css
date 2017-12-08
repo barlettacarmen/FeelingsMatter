@@ -1,0 +1,23 @@
+body{ background-color: ivory;font-family: Arial;}
+#wrapper0{position: absolute; width: 100%; bottom: 0%;}
+#wrapper1{position:absolute; width: 15%;margin: 20px auto;}
+#canvas2{position:absolute; width: 5%;border:1px solid grey;}
+#canvas1{position:absolute; width: 5%;/*border:1px solid red;*/}
+#wrapper2{position:absolute;width: 15%;left:16%;margin: 20px auto;}
+#canvas4{position:absolute; width: 5%; border:1px solid grey;}
+#canvas3{position:absolute; width: 5%;/*border:1px solid red;*/}
+#wrapper3{position:absolute;left:32%;width: 15%;margin: 20px auto;}
+#canvas6{position:absolute; width: 5%;border:1px solid grey;}
+#canvas5{position:absolute; width: 5%;/*border:1px solid red;*/}
+#wrapper4{position:absolute;left:48%;width: 15%;margin: 20px auto;}
+#canvas8{position:absolute; width: 5%;border:1px solid grey;}
+#canvas7{position:absolute; width: 5%;/*border:1px solid red;*/}
+#wrapper5{position:absolute;left:64%;width: 15%;margin: 20px auto;}
+#canvas10{position:absolute; width: 5%;border:1px solid grey;}
+#canvas9{position:absolute; width: 5%;/*border:1px solid red;*/}
+#wrapper6{position:absolute;left:80%;width: 15%;margin: 20px auto;}
+#canvas12{position:absolute;width: 5%; border:1px solid grey;}
+#canvas11{position:absolute; width: 5%;/*border:1px solid red;*/}
+#wrapper7{position:absolute;left: 20%;width: 50%;margin: 20px auto;}
+#canvas14{position:absolute; width: 50%;border:1px solid grey;}
+#canvas13{position:absolute;width: 100%;height: 20%;margin: 20px auto;}
