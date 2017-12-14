@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html >
+<head>
+</head>
+<body>
+
+  <a onclick="myFunction()" style="
+    position: fixed;
+    top: 0;
+    right:10%;
+    color: white;
+    margin-top:10px;
+    height:25px;
+    background-color: #4CAF50;
+    border: 2px solid #4CAF50;">Print the report</a>
+
+  <script>
+  function myFunction() {
+      window.print();
+  }
+  </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="reportstyle.css">
+<script src="legend.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+<div id="wrapper0">
+<h4 align="center">Excitement</h4>
+<canvas id="canvas0"></canvas>
+<h4 align="center">Relaxation</h4>
+<canvas id="canvas1"></canvas>
+<h4 align="center">Stress</h4>
+<canvas id="canvas2"></canvas>
+<h4 align="center">Engagement</h4>
+<canvas id="canvas3"></canvas>
+<h4 align="center">Interest</h4>
+<canvas id="canvas4"></canvas>
+<h4 align="center">Focus</h4>
+<canvas id="canvas5"></canvas>
+<div>
+<h4 align="center"> All emotions</h4>
+<canvas  id="canvas6"></canvas>
+ <div id="lineLegend"style="position:absolute;left:100%;top:85%;padding-left:5%;"></div>
+</div>
+
+<script src="report.js"></script>
+<div id="videos">
+  <h4 align="center"> Seen videos in chronological order</h4>
+</div>
+</div>
+<script>
+  let links=[];
+  let k;
+  if(localStorage.getItem('video')!=null){
+     k = JSON.parse(localStorage.getItem('video'));
+    links= links.concat(k.videos);}
+  else links[0]="No seen videos";
+  var ul = document.createElement("ul");
+  var li, a, text;
+  for (var i = 0, l = links.length; i < l; ++i) {
+    li = document.createElement('li');
+    a  = document.createElement('a');
+    text = document.createTextNode("https://youtu.be/"+links[i]);
+
+    a.href = "https://youtu.be/"+links[i];
+  //  a.setAttribute("class", "some-class-name");
+    a.appendChild(text);
+    li.appendChild(a);
+    ul.appendChild(li);
+
+  }
+  document.querySelector("#videos").appendChild(ul);
+
+</script>
+
+<script src="js/jquery-1.12.3.min.js"></script>
+</body>
+</html>

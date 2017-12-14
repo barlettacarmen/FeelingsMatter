@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="welcome.css">
+<h1 align="center" style="position: relative;top: 100px; color:green;">Welcome to Feelings Matter!</h1>
+</head>
+<body>
+
+
+    <h3 align="center"style="position: relative;top: 150px;">Do you want to connect to EMOTIV?</h3>
+
+    <div class="nav">
+    <a href="choosevideo.html" class="no" onclick="sessionStorage.setItem('emotiv','false')">&laquo; No</a>
+    <a href="slider.html"  class="yes" onclick="noEmotiv()">Yes &raquo;</a>
+    </div>
+    <script>
+    if(localStorage.getItem('experience')!=null){
+      if (confirm('Do you want to start a new session?')) {
+        // Yes!
+        localStorage.clear();
+} else {
+    // No!
+}
+    }
+    </script>
+    <script>
+    function noEmotiv(){
+      sessionStorage.setItem('emotiv','true');
+      window.alert("Please check that you already connected to EMOTIV");}
+    </script>
+
+</body>
+</html>
