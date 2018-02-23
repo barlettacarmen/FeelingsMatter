@@ -32,4 +32,5 @@ These are the step to follow to use the application:
 9. Click on the “STOP” button of the Javaa pplication or directly turn off the Emotiv helmet.
 10. Turn off the smartphone app and exit from the web app.
 
-<iframe width="854" height="480" src="https://www.youtube.com/embed/ceFbo26upQg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+### Presentational video
+https://www.youtube.com/watch?v=ceFbo26upQg
