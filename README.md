@@ -11,21 +11,22 @@ Using this application any therapist can better understand what her patients are
 
 #USER MANUAL
 These are the step to follow to use the application:
-1. Turn on the Emotiv helmet and the Java application.
-2. Click on the button “START” of the Java application, from this moment the helmet starts recording the child’s emotions.
-3. Turn on the smartphone application and put the smartphone in the VRheadset.
-4. Open the web app and follow the instructions provided by the user interface:
-	a. Selectthresholds
-	b. Choosevideotosee
-5. When the main frame opens wait that the video is charged in the interface and than click on the “Play” button.
-6. From this moment on, you will(if you want):
-	a. receive notifications about emotions
-	b. see what the child is seeing
-	c. monitor child’s emotions by clicking on the respective buttons
-	d. control the video(play/pause/fullscreen)
-	e. change thresholds
-	f. change video
-7. When you decide to exit click on the“EndExperience” button.
-8. You will see the final report and will be able to print it by clicking on the “Print report” button.
-9. Click on the “STOP” button of the Javaa pplication or directly turn off the Emotiv helmet.
-10. Turn off the smartphone app and exit from the web app.
+
+	1. Turn on the Emotiv helmet and the Java application.
+	2. Click on the button “START” of the Java application, from this moment the helmet starts recording the child’s emotions.
+	3. Turn on the smartphone application and put the smartphone in the VRheadset.
+	4. Open the web app and follow the instructions provided by the user interface:
+		a. Selectthresholds
+		b. Choosevideotosee
+	5. When the main frame opens wait that the video is charged in the interface and than click on the “Play” button.
+	6. From this moment on, you will(if you want):
+		a. receive notifications about emotions
+		b. see what the child is seeing
+		c. monitor child’s emotions by clicking on the respective buttons
+		d. control the video(play/pause/fullscreen)
+		e. change thresholds
+		f. change video
+	7. When you decide to exit click on the“EndExperience” button.
+	8. You will see the final report and will be able to print it by clicking on the “Print report” button.
+	9. Click on the “STOP” button of the Javaa pplication or directly turn off the Emotiv helmet.
+	10. Turn off the smartphone app and exit from the web app.
