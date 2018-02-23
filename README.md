@@ -11,6 +11,7 @@ Using this application any therapist can better understand what her patients are
 
 #USER MANUAL
 These are the step to follow to use the application:
+
 	1. TurnontheEmotivhelmetandourJavaapplication.
 	2. Click on the button “START” of the Java application, from this moment the
 	helmet starts recording the child’s emotions.
