@@ -27,10 +27,10 @@ let lC5 = new Chart(ctx5).Line(lC5Data, {
   barValueSpacing: 2
 });
 
-stressRef.on('value', function(snapshot){
+allEmotions.on('value', function(snapshot){
   if (index5>3) {
     lC5.removeData();
   }
-  lC5.addData([snapshot.val()], index5*10);
+  lC5.addData([snapshot.val().stress], index5*10);
   index5++;
 });

@@ -26,10 +26,10 @@ let lC3 = new Chart(ctx3).Line(lC3Data, {
   barValueSpacing: 2
 });
 
-interestRef.on('value', function(snapshot){
+allEmotions.on('value', function(snapshot){
   if (index3>3) {
     lC3.removeData();
   }
-  lC3.addData([snapshot.val()], index3*10);
+  lC3.addData([snapshot.val().interest], index3*10);
   index3++;
 });

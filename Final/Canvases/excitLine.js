@@ -27,10 +27,10 @@ let lC = new Chart(ctx1).Line(lCD, {
   barValueSpacing: 2
 });
 
-excitementRef.on('value', function(snapshot){
+allEmotions.on('value', function(snapshot){
   if (indice>3) {
     lC.removeData();
   }
-  lC.addData([snapshot.val()], indice*10);
+  lC.addData([snapshot.val().excitement], indice*10);
   indice++;
 });

@@ -27,10 +27,10 @@ let lineChart = new Chart(ctx).Line(lineChartData, {
   barValueSpacing: 2
 });
 
-engagementRef.on('value', function(snapshot){
+allEmotions.on('value', function(snapshot){
   if (index>3) {
     lineChart.removeData();
   }
-  lineChart.addData([snapshot.val()], index*10);
+  lineChart.addData([snapshot.val().engagement], index*10);
   index++;
 });

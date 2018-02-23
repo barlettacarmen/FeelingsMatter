@@ -27,10 +27,10 @@ let lC2 = new Chart(ctx2).Line(lC2Data, {
   barValueSpacing: 2
 });
 
-focusRef.on('value', function(snapshot){
+allEmotions.on('value', function(snapshot){
   if (indice2>3) {
     lC2.removeData();
   }
-  lC2.addData([snapshot.val()], indice2*10);
+  lC2.addData([snapshot.val().focus], indice2*10);
   indice2++;
 });

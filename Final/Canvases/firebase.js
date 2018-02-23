@@ -19,7 +19,7 @@ var interButton=document.getElementById("b4");
 var stressButton=document.getElementById("b6");
 var relaxButton=document.getElementById("b5");
 
-if(sessionStorage.getItem('emotiv')){
+if(sessionStorage.getItem('emotiv')=='true'){
   sogliaMin=Number(sessionStorage.getItem('min'));
   sogliaMax=Number(sessionStorage.getItem('max'));
 //  window.alert(" "+sogliaMax+" "+sogliaMin);
@@ -50,43 +50,51 @@ function tempAlert(msg,duration)
      },duration);
      document.body.appendChild(el);
 }
-
 //Do the update and trigger alerts
 var allEmotions=database.ref('emotions');
 /*allEmotions.on('value', function(snapshot){
   window.alert(snapshot.val().stress);
 });*/
 var engagementRef=database.ref('emotions/engagement');
+var excitementRef=database.ref('emotions/excitement');
+var focusRef=database.ref('emotions/focus');
+var interestRef=database.ref('emotions/interest');
+var relaxRef=database.ref('emotions/relax');
+var stressRef=database.ref('emotions/stress');
+
+if(sessionStorage.getItem('emotiv')=='true'){
+
+
 engagementRef.on('value', function(snapshot){
   updateButtonValue("Engagement",engButton,snapshot.val(), 'glowing1');
   if(snapshot.val()>=sogliaMax || snapshot.val()<=sogliaMin)
     tempAlert("Info! Engagement value: "+snapshot.val()+"% outside the normal range",5000);
 });
-var excitementRef=database.ref('emotions/excitement');
+
 excitementRef.on('value', function(snapshot){
   updateButtonValue("Excitement",excitButton,snapshot.val(), 'glowing2');
   if(snapshot.val()>=sogliaMax || snapshot.val()<=sogliaMin)
     tempAlert("Info! Excitement value: "+snapshot.val()+"% outside the normal range",5000);
 });
-var focusRef=database.ref('emotions/focus');
+
 focusRef.on('value', function(snapshot){
   updateButtonValue("Focus",focusButton,snapshot.val(),'glowing3');
   if(snapshot.val()>=sogliaMax || snapshot.val()<=sogliaMin)
     tempAlert("Info! Focus value: "+snapshot.val()+"% outside the normal range",5000);
 });
-var interestRef=database.ref('emotions/interest');
+
 interestRef.on('value', function(snapshot){
   updateButtonValue("Interest",interButton,snapshot.val(),'glowing4');
   if(snapshot.val()>=sogliaMax || snapshot.val()<=sogliaMin)
     tempAlert("Info! Interest value: "+snapshot.val()+"% outside the normal range",5000);
 });
-var relaxRef=database.ref('emotions/relax');
+
 relaxRef.on('value', function(snapshot){
   updateButtonValue("Relaxation",relaxButton,snapshot.val(),'glowing6');
   if(snapshot.val()>=sogliaMax || snapshot.val()<=sogliaMin)
     tempAlert("Info! Relax value: "+snapshot.val()+"% outside the normal range",5000);
 });
-var stressRef=database.ref('emotions/stress');
+
 stressRef.on('value', function(snapshot){
   updateButtonValue("Stress",stressButton,snapshot.val(),'glowing5');
   if(snapshot.val()>=sogliaMax || snapshot.val()<=sogliaMin)
@@ -122,14 +130,14 @@ allEmotions.on('value', function(snapshot){
   //window.alert(""+localStorage.getItem('experience'));
   //localStorage.clear();
 });
-
+};
 
 
 //Video
-
-  function BeginListening(){
-   //After the first load, we can begin listening for new values.
+function BeginListening(){
+ //begin listening for new values.
    setTimeout(function(){
+   var currentTime = database.ref('/CurrentTime');
    var play = database.ref('/Play');
    var videoId = database.ref('/videoID/ID');
    videoId.on('value', function(snapshot){
@@ -139,7 +147,7 @@ allEmotions.on('value', function(snapshot){
 
    play.on('value', function(snapshot){
      gameInstance.SendMessage('360VideoPlayer', 'PlayButtonFirebase', snapshot.val());
-   });
+   })
 
    var cameraRotation = database.ref('cameraRotation');
    cameraRotation.on('value', function(snapshot){
@@ -147,5 +155,10 @@ allEmotions.on('value', function(snapshot){
      gameInstance.SendMessage('Main Camera', 'setTempY', snapshot.child('Y').val());
      gameInstance.SendMessage('Main Camera', 'UpdateFromFirebase');
    });
+
+   currentTime.on('value', function(snapshot){
+     gameInstance.SendMessage('360VideoPlayer', 'setTimeCurrentDurationFromFirebase', snapshot.val());
+   })
+
  }, 5000);
- }
+};
