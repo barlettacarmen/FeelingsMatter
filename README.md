@@ -1,4 +1,3 @@
-#README
 The development of emotions is a key aspect of the therapies aiming to integrate people with NDD (Neuro-Developmental Disorders) in the society, and the better are the tools available to therapists, the better are also the therapies. It is known that the usage of VR systems can help children in developing their skills. This project aims to help therapists analyze how the usage of VR can influence the children’s emotions and development.
 Moreover, the more VR experiences can be used, the more accurate are the final results.
 We built an integrated application able to show not only what the child is seeing in his VR video but also data on his emotions in nearly real time, so that therapists can quickly control any parameter they want. In particular the six monitored feelings are: stress, focus, excitement, engagement, interest and relaxation.
@@ -9,7 +8,8 @@ The needed tools are, all things considered, not very expensive and easy to find
 Possible future works include, but are not limited to, create a better final report, create a YouTube Channel for the application, implement interactable-videos and create a machine learning algorithm for the classification of videos in the various emotions.
 Using this application any therapist can better understand what her patients are feeling, and as such design better therapies that could help these children be quicker and better integrated in our society.
 
-#USER MANUAL
+##USER MANUAL##
+
 These are the step to follow to use the application:
 
 	1. Turn on the Emotiv helmet and the Java application.
